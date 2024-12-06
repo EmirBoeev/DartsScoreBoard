@@ -14,6 +14,4 @@ struct SpecialButtonView: View {
     }
 }
 
-#Preview {
-    SpecialButtonView()
-}
+

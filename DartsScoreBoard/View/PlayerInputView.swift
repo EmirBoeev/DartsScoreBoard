@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PlayerInputView: View {
-    @State var p1Name = ""
-    @State var p2Name = ""
+    @Binding var p1Name : String
+    @Binding var p2Name : String
+    @Binding var showDartsBoard : Bool
     var body: some View {
         NavigationStack {
             VStack {
@@ -21,9 +22,9 @@ struct PlayerInputView: View {
                 Divider()
                 Text("Vul de namen in van de spelers...")
                 
-                NavigationLink {
+                Button {
                     
-                    DartBoardView(dataStore: DataStore(p1: p1Name, p2: p2Name))
+                    showDartsBoard.toggle()
                 } label: {
                     Text("Speel")
                 }.disabled(p1Name.isEmpty || p2Name.isEmpty)
@@ -32,6 +33,4 @@ struct PlayerInputView: View {
     }
 }
 
-#Preview {
-    PlayerInputView()
-}
+
