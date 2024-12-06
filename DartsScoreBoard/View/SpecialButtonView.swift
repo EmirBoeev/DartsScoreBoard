@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct SpecialButtonView: View {
-    var buttonName : String
+    var buttonType : ButtonType
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        switch buttonType {
+        case .bull:
+            Text("Bull")
+        case .bullseye:
+            Text("Bull's Eye")
+        case .triple:
+            Text("Triple")
+        case .double:
+            Text("Double")
+        }
+        
     }
 }
 

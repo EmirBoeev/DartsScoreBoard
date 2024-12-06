@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum ButtonType {
+    case bull
+    case bullseye
+    case triple
+    case double
+}
 
 @Observable
 class DataStore {
