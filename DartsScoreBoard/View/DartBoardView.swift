@@ -16,15 +16,34 @@ struct DartBoardView: View {
             HStack {
                 VStack {
                     Text(dataStore.p1)
-                    Text(String(dataStore.p1Score))
+                    Text(String(dataStore.p1Points))
                 }.foregroundStyle(dataStore.currentPlayer == dataStore.p1 ? .red : .gray)
                 Spacer().frame(width: 100)
                 VStack {
                     Text(dataStore.p2)
-                    Text(String(dataStore.p2Score))
+                    Text(String(dataStore.p2Points))
                 }.foregroundStyle(dataStore.currentPlayer == dataStore.p2 ? .red : .gray)
             }
             Divider()
+            HStack{
+                Text(dataStore.currentPlayer == dataStore.p1 ? "Score speler 1: \(dataStore.p1Score)" : "Score speler 2: \(dataStore.p2Score)")
+            }
+            HStack {
+                Button {
+                    dataStore.toggleCurrnetPlayer()
+                } label: {
+                    Image(systemName: "checkmark.circle.fill").resizable().frame(width: 25, height: 25)
+                }.buttonStyle(PlainButtonStyle())
+                
+                Spacer().frame(width: 300)
+
+                Button {
+                    dataStore.toggleCurrnetPlayer()
+                } label: {
+                    Image(systemName: "arrowshape.turn.up.backward.fill").resizable().frame(width: 25, height: 25)
+                }.buttonStyle(PlainButtonStyle())
+
+            }
             Spacer()
             Button {
                 dataStore.printThisSHiii()

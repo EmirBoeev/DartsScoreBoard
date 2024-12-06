@@ -6,12 +6,16 @@
 //
 
 import Foundation
+
+
 @Observable
 class DataStore {
     var p1 : String
     var p2 : String
-    var p1Score = 501
-    var p2Score = 501
+    var p1Points = 501
+    var p2Points = 501
+    var p1Score = 0
+    var p2Score = 0
     
     var currentPlayer : String
     
