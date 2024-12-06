@@ -44,6 +44,39 @@ struct DartBoardView: View {
                 }.buttonStyle(PlainButtonStyle())
 
             }
+            HStack {
+                
+                SpecialButtonView(buttonType: ButtonType.bull)
+                SpecialButtonView(buttonType: ButtonType.bullseye)
+                SpecialButtonView(buttonType: ButtonType.triple)
+                SpecialButtonView(buttonType: ButtonType.double)
+                
+            }
+            HStack {
+                ForEach(1...5, id: \.self) {
+                    number in
+                    ScoreButtonView(score: number)
+                }
+            }
+            HStack {
+                ForEach(6...10, id: \.self) {
+                    number in
+                    ScoreButtonView(score: number)
+                }
+            }
+            HStack {
+                ForEach(11...15, id: \.self) {
+                    number in
+                    ScoreButtonView(score: number)
+                }
+            }
+            HStack {
+                ForEach(16...20, id: \.self) {
+                    number in
+                    ScoreButtonView(score: number)
+                }
+            }
+            
             Spacer()
             Button {
                 dataStore.printThisSHiii()
