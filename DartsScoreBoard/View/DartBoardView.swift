@@ -10,8 +10,6 @@ import SwiftUI
 struct DartBoardView: View {
     @State var dataStore : DataStore
     var body: some View {
-        
-        
         VStack {
             HStack {
                 VStack {
@@ -30,7 +28,7 @@ struct DartBoardView: View {
             }
             HStack {
                 Button {
-                    dataStore.toggleCurrnetPlayer()
+                    dataStore.confirmScore()
                 } label: {
                     Image(systemName: "checkmark.circle.fill").resizable().frame(width: 25, height: 25)
                 }.buttonStyle(PlainButtonStyle())
@@ -38,7 +36,7 @@ struct DartBoardView: View {
                 Spacer().frame(width: 300)
 
                 Button {
-                    dataStore.toggleCurrnetPlayer()
+                    dataStore.cancelScore()
                 } label: {
                     Image(systemName: "arrowshape.turn.up.backward.fill").resizable().frame(width: 25, height: 25)
                 }.buttonStyle(PlainButtonStyle())
@@ -78,19 +76,15 @@ struct DartBoardView: View {
             }
             
             Spacer()
-            Button {
-                dataStore.printThisSHiii()
-            } label: {
-                Text("TEST")
-            }
-            Button {
-                dataStore.toggleCurrnetPlayer()
-            } label: {
-                Text("TOGGLE")
+            HStack {
+                if !dataStore.throwOutString.isEmpty {
+                    Text("Je kunt uitgooien op: \(dataStore.throwOutString)")
+                }
+                
             }
             Spacer()
 
-        }
+        }.environment(dataStore)
         
      
     }
