@@ -13,7 +13,7 @@ struct ContentView: View {
     @State var p2Name = ""
     var body: some View {
         if showDartsBoard {
-            DartBoardView(dataStore: DataStore(p1: p1Name, p2: p2Name))
+            DartBoardView(dataStore: DataStore(p1: p1Name, p2: p2Name), showDartsBoard: $showDartsBoard)
         }
         else {
             PlayerInputView(p1Name: $p1Name, p2Name: $p2Name, showDartsBoard: $showDartsBoard)

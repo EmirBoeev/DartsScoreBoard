@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DartBoardView: View {
     @State var dataStore : DataStore
+    @Binding var showDartsBoard : Bool
     var body: some View {
         VStack {
             HStack {
@@ -81,6 +82,13 @@ struct DartBoardView: View {
                     Text("Je kunt uitgooien op: \(dataStore.throwOutString)")
                 }
                 
+            }
+            Spacer()
+            Divider()
+            Button {
+                showDartsBoard = false
+            } label: {
+                Text("Nieuw spel starten")
             }
             Spacer()
 
